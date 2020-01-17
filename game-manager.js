@@ -170,7 +170,7 @@ class GameManager {
     addFireballs(){
     
     
-      //Delete unused 
+      //Delete unused fireballs
       for (let i = this.fireballs.length - 1; i > -1; i--) {
           if (this.fireballs[i].isOut()) {
             this.fireballs.splice(i, 1);
@@ -178,19 +178,19 @@ class GameManager {
         }
       
         
-          //Return if there is less than 300 milisecond since 
+          //Return if there is less than 600 milisecond since 
         // the last call
         if (millis() - this.lastAddedFireball < 600) {
           return;
         }
     
-        // Check if there is already max box in the array
+        // Check if there is already max fireballs in the array
         let currentBallCount = this.fireballs.length;
         if (currentBallCount > (this.maxFireballs - 1)) {
           return;
         }
     
-        //Add 
+        //Add a fireball 30% of the time
         this.Z = random(0, 10);
         if (this.Z > 7 && this.boxes.length === 0) {
         
